@@ -22,7 +22,7 @@ for row in atracados_tab:
 
 # abre o arquivo em modo de escrita, escreve os novos dados e fecha o arquivo
 with open(
-    "navios_atracados.csv", "a", newline="", encoding="utf-8"
+    "navios_atracados_temp.csv", "a", newline="", encoding="utf-8"
 ) as navios_atracados_file:
     natemp = csv.writer(navios_atracados_file)
     natemp.writerows(n1)
@@ -30,7 +30,9 @@ with open(
 
 # lê o arquivo CSV atualizado e mostra na tela
 try:
-    navios_atracados_updated = pd.read_csv("navios_atracados.csv", encoding="utf-8")
+    navios_atracados_updated = pd.read_csv(
+        "navios_atracados_temp.csv", encoding="utf-8"
+    )
     print(navios_atracados_updated)
 except FileNotFoundError:
     print("Arquivo CSV não encontrado.")
@@ -48,14 +50,16 @@ for row in fundeados_tab:
 
 # abre o arquivo em modo de escrita, escreve os novos dados e fecha o arquivo
 with open(
-    "navios_fundeados.csv", "a", newline="", encoding="utf-8"
+    "navios_fundeados_temp.csv", "a", newline="", encoding="utf-8"
 ) as navios_fundeados_file:
     natemp = csv.writer(navios_fundeados_file)
     natemp.writerows(n2)
 
 # lê o arquivo CSV atualizado e mostra na tela
 try:
-    navios_fundeados_updated = pd.read_csv("navios_fundeados.csv", encoding="utf-8")
+    navios_fundeados_updated = pd.read_csv(
+        "navios_fundeados_temp.csv", encoding="utf-8"
+    )
     print(navios_fundeados_updated)
 except FileNotFoundError:
     print("Arquivo CSV não encontrado.")
@@ -73,14 +77,16 @@ for row in esperados_tab:
 
 # abre o arquivo em modo de escrita, escreve os novos dados e fecha o arquivo
 with open(
-    "navios_esperados.csv", "a", newline="", encoding="utf-8"
+    "navios_esperados_temp.csv", "a", newline="", encoding="utf-8"
 ) as navios_esperados_file:
     natemp = csv.writer(navios_esperados_file)
     natemp.writerows(n3)
 
 # lê o arquivo CSV atualizado e mostra na tela
 try:
-    navios_esperados_updated = pd.read_csv("navios_esperados.csv", encoding="utf-8")
+    navios_esperados_updated = pd.read_csv(
+        "navios_esperados_temp.csv", encoding="utf-8"
+    )
     print(navios_esperados_updated)
 except FileNotFoundError:
     print("Arquivo CSV não encontrado.")
